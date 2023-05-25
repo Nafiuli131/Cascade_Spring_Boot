@@ -72,7 +72,9 @@ public class CascadeApplication {
 
         //CascadeType.REMOVE
         //it works like delete operation
-        persistAuthorRepository.delete(persistAuthorRepository.getById(1L));
+//        persistAuthorRepository.delete(persistAuthorRepository.getById(1L));
+
+        //those are the main cascadetype operations. there are also few type...................
     }
 
 }
