@@ -20,6 +20,6 @@ public class Author {
 
     private String name;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", cascade = {CascadeType.ALL,CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<Book> books;
 }

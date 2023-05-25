@@ -7,6 +7,7 @@ import com.example.cascade.Entities.PersistBook;
 import com.example.cascade.Repository.AuthorRepository;
 import com.example.cascade.Repository.BookRepository;
 import com.example.cascade.Repository.PersistAuthorRepository;
+import jakarta.persistence.CascadeType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -59,6 +60,19 @@ public class CascadeApplication {
 //        persistAuthorRepository.delete(persistAuthorRepository.getById(1L)); // show error because here automatically
 //        books not deleted. to operate this operation first of all need to delete book first
 
+//        CascadeType.MERGE
+//        it works like update statement
+//        Author existingAuthor = authorRepository.findById(3L)
+//                .orElseThrow(() -> new IllegalArgumentException("Author not found"));
+//
+//        existingAuthor.setName("updatedBook");
+//        existingAuthor.getBooks().forEach(book -> book.setTitle("New Title"));
+//
+//        authorRepository.save(existingAuthor);
+
+        //CascadeType.REMOVE
+        //it works like delete operation
+        persistAuthorRepository.delete(persistAuthorRepository.getById(1L));
     }
 
 }

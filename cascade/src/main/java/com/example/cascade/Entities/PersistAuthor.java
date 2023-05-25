@@ -20,6 +20,6 @@ public class PersistAuthor {
 
     private String name;
 
-    @OneToMany(mappedBy = "persistAuthor", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "persistAuthor", cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<PersistBook> persistBooks;
 }
